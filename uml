@@ -1,0 +1,108 @@
+@startuml
+package vehicle {
+class Vehicle {
+- plateNumber : Plate
+ - Make : String
+ - Model : String
+ - yearOfProduction : int
+ + getPlateNumber()
+ + getMake()
+ + getYearOfProduction()
+ + getModel()
+ + setPlateNumber()
+ + setMake()
+ + setModel()
+ + setyearOfProduction()
+ + toString(): String
+ + equals(Object obj): boolean
+
+}
+
+Class Truck {
+- maxCapacity : Double
++ getMaxCapacity()
++ setMaxCapacity()
+
+
+}
+Class DieselTruck {
+- fuelTankCapacity : Double
++ getFuelTankCapacity()
++ setFuelTankCapacity()
+
+}
+Class ElectricTruck {
+- maxAutonomyRange : Double
++ getMaxAutonomyRange()
+}
+
+Class PlateNumber {
+- type : String
+- number : int
++ getType()
++ getNumber()
++ setType()
++ setNumber()
++ toString()
+
+}
+
+Class Car {
+ - MaxNumofpassengers : int
+ + getMaxNumOfPassengers()
+ + setMaxNumOfPassangers()
+
+
+}
+
+Class ElectricCar {
+- getMaxAutonomyRange
++getMaxAutonomyRange()
++ setMaxAnatomyRange()
+}
+
+
+}
+
+package client {
+Class Client {
+- clientName : string
+- clientId: int
+- clientPhoneNumber : int
+- clientLeasedVehicles : Vehicle[]
++ getClientName()
++ getClientId()
++ getClientPhoneNumber()
++ getClientLeasedVehicles()
++ setClientName()
++ setClientId()
++ setClientPhoneNumber()
++ setClientLeasedVehicles
++ toString() : string
++ equals (Object obj)
+
+
+}
+}
+
+package driver {
+
+class Driver {
+import vehicle
+Displaymenu()
+
+}
+}
+Vehicle <-- PlateNumber : has-a
+
+Truck <|- ElectricTruck : is-a
+
+Truck <|- DieselTruck : is-a
+
+Vehicle <|-- Truck : is-a
+
+Car <|- ElectricCar : is-a
+
+Vehicle <|- Car : is-a
+
+@enduml
